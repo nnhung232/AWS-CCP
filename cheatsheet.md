@@ -25,7 +25,58 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 ## AWS Artifact
 ## AWS config
 ## IAM
-
+## AWS Organization
+## AWS CloudTrail
+## AWS Resource for Security Support
+### Amazon Inspector
+### AWS Trusted Advisor
+### AWS Report Abuse
 
 # Technology
+## Deployment and Operating in the AWS
+### On premise & Hybrid
+- Snowball
+- Storage Gateway
+- DNS
+### Deployment / Infrastructure as Code
+- Elastic Beanstalk
+- CodeCommit
+- CodePipeline
+- CodeDeploy
+- CloudFormation
+- OpsWorks
+- SDKs
+- CLI
+## AWS Global Infrastructure
+- Region
+- Avaiablity Zone
+- Edge Location
+- Direct Connect
+- Global vs Regional services
+## Core AWS services
+- Object Storage
+  - S3
+  - Glacier
+- EC2 (AMI, Storage options, types)
+- ELB (Classic, application, network)
+- CloudWatch
+- Database
+  - Relational: RDS, Aurora
+  - NoSQL: DynamoDB
+  - Data warehouse: Redshift
+  - In memory storage: ElastiCache
+- Serverless (Lambda, S3, DynamoDB, SNS, SQS)
+- Machine learning (Amazon rekognition)
+- Stream - Kinesis
+## Technology support
+- AWS support plan
+  - Free
+  - Developer
+  - Business
+  - Enterprise
+- AWS partner network
+- AWS professional services
+- AWS quick start
+- AWS personal health dashboard
+
 # Billing and Pricing
