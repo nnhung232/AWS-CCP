@@ -80,3 +80,12 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - AWS personal health dashboard
 
 # Billing and Pricing
+## Pricing models for AWS
+### EC2
+- On-Demand
+- Spot
+- Reserved
+- Dedicated Host
+- Saving Plans
+- Per Second Billing
+### 
