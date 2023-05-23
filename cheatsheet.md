@@ -12,9 +12,13 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - Increase speed and agility.
 - Stop spending money running and maintaining data centers
 - Go global in minutes
+
 ## Cloud computing models
 - Infrastructure as a Service (IaaS): Các service infrastructure cơ bản (basic building blocks for cloud IT). VD như: ta lauch và manage 1  cloud linux server, đó là IaaS. IaaS provide highest level of flexibility and management control over IT resources. Các IaaS:  Virtual private cloud (VPC), Elastic cloud compute (EC2), Elastic block store (EBS).
-- Platform as a Service (PaaS): 
+- Platform as a Service (PaaS): ở models này, AWS sẽ control a little bit infrastructure level. VD: relational database service, ở service này, AWS cung cấp server, operating system and everything to run that, người dùng chỉ cần administer database đó thôi.
+- Software as a Service (SaaS): completed software product. VD: office365.
+- Function as a Service (FaaS): aka Serverless Computing: build and run app mà ko cần thinking about servers. VD: Simple storage service, AWS lambda, DynamoDB.![Uploading image.png…]()
+
 ## Type of Cloud Deployment
 ## Cloud Architecture Design Principles
 ### AWS Well-Architected Framework design principles
