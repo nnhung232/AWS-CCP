@@ -24,10 +24,10 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - On-Premise: tại chỗ. It sometimes called the private cloud
 - Hybrid: Là a way to connect infrastructure và application betwwen cloud-based resource và những resource ko ở trên cloud. Ư**AWS Outpost** là service cho phép chạy AWS service trên on-premise infrastruture
 ## Cloud Architecture Design Principles
+- Design for failure and making sure that our architure is fault tolerant. We do that by using architecture that spanning multiple avaiablitiy zones, multiple regions
+- Elasticity: or auto-scaling depending on demand. (example: EC2 auto-scaling)
+- Loose coupling: 
 ### AWS Well-Architected Framework design principles
-### Design for Failure
-### Elasticity
-### Loose Coupling
 ## AWS Shared Responsibility Model 
 
 # Security and Compliance
