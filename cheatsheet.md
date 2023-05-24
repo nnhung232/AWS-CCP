@@ -27,7 +27,14 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - Design for failure and making sure that our architure is fault tolerant. We do that by using architecture that spanning multiple avaiablitiy zones, multiple regions
 - Elasticity: or auto-scaling depending on demand. (example: EC2 auto-scaling)
 - Loose coupling: 
-### AWS Well-Architected Framework design principles
+## The 6 Pillars of the AWS Well-Architected Framework
+### 1. Operational excellence 
+### 2. Security
+### 3. Reliability
+### 4. Performance efficiency
+### 5. Cost optimization
+### 6. Sustainability
+
 ## AWS Shared Responsibility Model 
 
 # Security and Compliance
