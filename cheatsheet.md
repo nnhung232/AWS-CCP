@@ -55,26 +55,76 @@ Security pillar bao gồm ability to protect data, systems, and assets to take a
 - Security: Before you architect any workload, you need to put in place practices that influence security.
 - Identity and access management: control who can do what.
 - Detection: be able to identify security incidents
-- Infrastructure protection
-- Data protection
-- Incident response
-- Application security
+- Infrastructure protection: protect your systems and services
+- Data protection: maintain the confidentiality and integrity of data through data protection
+- Incident response: have a well-defined and practiced process for responding to security incidents
+- Application security: describes the overall process of how you design, build, and test the security properties of the workloads you develop.
 
 ### 3. Reliability
-**Design principles**
+Reliability pillar là the ability of a workload to perform its intended function correctly and consistently 
+**Design principles**:
+- Automatically recover from failure
+- Test recovery procedures
+- Scale horizontally to increase aggregate workload availability
+- Stop guessing capacity
+- Manage change in automation
 **Best practice**:
+- Foundations: Before building any system, foundational requirements that influence reliability should be in place. For example, you must have sufficient network bandwidth to your data center.
+- Workload architecture: design for both software and infrastructure. For reliability, there are specific patterns you must follow, such as loosely coupled dependencies, graceful degradation, and limiting retries.
+- Change management: Changes to your workload or its environment must be anticipated and accommodated to achieve reliable operation of the workload
+- Failure management: take steps to implement resiliency in your workload, such as fault isolation, automated failover to healthy resources, and a disaster recovery strategy.
+
 ### 4. Performance efficiency
-**Design principles**
+Performance Efficiency pillar là khả năng to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve
+**Design principles**:
+- Democratize advanced technologies: when making advanced technology implementation, delegating complex tasks to your cloud vendor, rather than asking your IT team to learn about hosting and running a new technology.
+- Go global in minutes
+- Use serverless architectures
+- Experiment more often
+- Consider mechanical sympathy: Understand how cloud services are consumed and always use the technology approach that aligns with your workload goals. For example, consider data access patterns when you select database or storage approaches.
 **Best practice**:
+- Selection: Take a data-driven approach to build high-performance architecture
+- Review: Reviewing your choices on a regular basis 
+- Monitoring: ensures you are aware of any deviance from expected performance.
+- Tradeoffs: Make trade-offs in your architecture to improve performance, such as using compression or caching, or relaxing consistency requirements
+
 ### 5. Cost optimization
+Cost Optimization pillar includes the ability to run systems to deliver business value at the lowest price point
 **Design principles**
+- Implement cloud financial management
+- Adopt a consumption model: Pay only for what you require and increase or decrease usage depending on requirements, not by forecasting. 
+- Measure overall efficiency: Measure the business output of the workload and the costs associated with delivering it.
+- Stop spending money on undifferentiated heavy lifting
+- Analyze and attribute expenditure
 **Best practice**:
+- Practice Cloud Financial Management
+- Expenditure and usage awareness
+- Cost-effective resources
+- Manage demand and supply resources
+- Optimize over time
+
 ### 6. Sustainability
+The discipline of sustainability addresses the long-term environmental, economic, and societal impact of your business activities.
 **Design principles**
+- Understand your impact
+- Establish sustainability goals
+- Maximize utilization
+- Anticipate and adopt new, more efficient hardware and software offerings
+- Use managed services
+- Reduce the downstream impact of your cloud workloads
 **Best practice**:
+- Region selection
+- Alignment to demand: User behavior patterns can help you identify improvements to meet sustainability goals.
+- Software and architecture: Implement software and architecture patterns to perform load smoothing and maintain consistent high utilization of deployed resources
+- Data: Implement software and architecture patterns to perform load smoothing and maintain consistent high utilization of deployed resources
+- Hardware and services
+- Process and culture
 
 ## AWS Shared Responsibility Model 
+- Customer is responsible for security IN the cloud (customer data, platforms, applications, OS, network configuration and security, firewall, client and server side encryption, etc)
 
+- AWS is responsible for security of the cloud (compute, storage, database, networking, hardware, local access security, power, regions, availability zones and edge locations)
+- 
 # Security and Compliance
 ## VPC 
 ## VPN
