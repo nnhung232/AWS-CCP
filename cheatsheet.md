@@ -22,14 +22,19 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 ## Type of Cloud Deployment
 - Cloud: Fully deploy in cloud
 - On-Premise: tại chỗ. It sometimes called the private cloud
-- Hybrid: Là a way to connect infrastructure và application betwwen cloud-based resource và những resource ko ở trên cloud. Ư**AWS Outpost** là service cho phép chạy AWS service trên on-premise infrastruture
+- Hybrid: Là a way to connect infrastructure và application betwwen cloud-based resource và những resource ko ở trên cloud. *AWS Outpost* là service cho phép chạy AWS service trên on-premise infrastruture
 ## Cloud Architecture Design Principles
 - Design for failure and making sure that our architure is fault tolerant. We do that by using architecture that spanning multiple avaiablitiy zones, multiple regions
 - Elasticity: or auto-scaling depending on demand. (example: EC2 auto-scaling)
 - Loose coupling: 
 ## The 6 Pillars of the AWS Well-Architected Framework
 ### 1. Operational excellence
-Operational excellence pillar bao gồm ability to support development và run workloads effectively, gain insight into their operation, và continuously improve. Có 5 design principles for 
+Operational excellence pillar bao gồm ability to support development và run workloads effectively, gain insight into their operation, và continuously improve (*tóm gọn: là ability to run and monitor system*). Có 5 design principles for this Operational excellence pillar:
+- perform operations as code / Infrastructure as code (nghĩa là manage through code chứ ko through manual process)
+- make frequent, small, reversible changes
+- refine operations procedures frequently
+- anticipate failure
+- learn from all operational failures
 ### 2. Security
 ### 3. Reliability
 ### 4. Performance efficiency
