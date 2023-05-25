@@ -35,7 +35,13 @@ Operational excellence pillar bao gồm ability to support development và run w
 - refine operations procedures frequently
 - anticipate failure
 - learn from all operational failures
+Best practice:
+- understand business and customer needs 
+- creates and uses procedures to respond to operational events, and validates their effectiveness.
+- collects metrics that are used to measure the achievement
+- design operations to support evolution over time in response to change
 ### 2. Security
+Security pillar bao gồm ability to prote
 ### 3. Reliability
 ### 4. Performance efficiency
 ### 5. Cost optimization
