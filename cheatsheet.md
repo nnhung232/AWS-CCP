@@ -29,7 +29,7 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - Loose coupling: 
 ## The 6 Pillars of the AWS Well-Architected Framework
 ### 1. Operational excellence
-Operational excellence pillar bao gồm ability to support 
+Operational excellence pillar bao gồm ability to support development và run workloads effectively, gain insight into their operation, và continuously improve. Có 5 design principles for 
 ### 2. Security
 ### 3. Reliability
 ### 4. Performance efficiency
