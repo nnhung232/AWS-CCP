@@ -126,6 +126,14 @@ The discipline of sustainability addresses the long-term environmental, economic
 - AWS is responsible for security of the cloud (compute, storage, database, networking, hardware, local access security, power, regions, availability zones and edge locations)
 - 
 # Security and Compliance
+AWS manages security OF the cloud; customer are responsible for security IN the cloud.
+## Benefits of AWS Security
+- Keep Your Data Safe – the AWS infrastructure puts strong safeguards in place to help.
+- Protect your privacy – All data is stored in highly secure AWS data centers.
+- Meet Compliance Requirements – AWS manages dozens of compliance programs in its infrastructure. This means that segments of your compliance have already been completed.
+- Save Money – cut costs by using AWS data centers. Maintain the highest standard of s security without having to manage your own facility.
+- Scale Quickly – security scales with your AWS Cloud usage. No matter the size of your business, the AWS infrastructure is designed to keep your data safe.
+
 ## VPC 
 ## VPN
 ## AWS Shield
