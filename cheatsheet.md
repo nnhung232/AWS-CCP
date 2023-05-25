@@ -29,23 +29,49 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - Loose coupling: 
 ## The 6 Pillars of the AWS Well-Architected Framework
 ### 1. Operational excellence
-Operational excellence pillar bao gồm ability to support development và run workloads effectively, gain insight into their operation, và continuously improve (*tóm gọn: là ability to run and monitor system*). Có 5 design principles for this Operational excellence pillar:
+Operational excellence pillar bao gồm ability to support development và run workloads effectively, gain insight into their operation, và continuously improve (*tóm gọn: là ability to run and monitor system*). 
+**Design principles** for this Operational excellence pillar:
 - perform operations as code / Infrastructure as code (nghĩa là manage through code chứ ko through manual process)
 - make frequent, small, reversible changes
 - refine operations procedures frequently
 - anticipate failure
 - learn from all operational failures
-Best practice:
+**Best practice**:
 - understand business and customer needs 
 - creates and uses procedures to respond to operational events, and validates their effectiveness.
 - collects metrics that are used to measure the achievement
 - design operations to support evolution over time in response to change
 ### 2. Security
-Security pillar bao gồm ability to prote
+Security pillar bao gồm ability to protect data, systems, and assets to take advantage of cloud technologies to improve security.
+**Design principles**
+- Implement a strong identity foundation
+- Enable traceability
+- Apply security at all layers
+- Automate security best practices
+- Protect data in transit and at rest
+- Keep people away from data
+- Prepare for security events
+**Best practice**:
+- Security: Before you architect any workload, you need to put in place practices that influence security.
+- Identity and access management: control who can do what.
+- Detection: be able to identify security incidents
+- Infrastructure protection
+- Data protection
+- Incident response
+- Application security
+
 ### 3. Reliability
+**Design principles**
+**Best practice**:
 ### 4. Performance efficiency
+**Design principles**
+**Best practice**:
 ### 5. Cost optimization
+**Design principles**
+**Best practice**:
 ### 6. Sustainability
+**Design principles**
+**Best practice**:
 
 ## AWS Shared Responsibility Model 
 
