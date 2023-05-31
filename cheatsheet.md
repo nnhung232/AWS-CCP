@@ -124,7 +124,7 @@ The discipline of sustainability addresses the long-term environmental, economic
 - Customer is responsible for security IN the cloud (customer data, platforms, applications, OS, network configuration and security, firewall, client and server side encryption, etc)
 
 - AWS is responsible for security of the cloud (compute, storage, database, networking, hardware, local access security, power, regions, availability zones and edge locations)
-- 
+
 # Security and Compliance
 AWS manages security OF the cloud; customer are responsible for security IN the cloud.
 ## Benefits of AWS Security
@@ -133,14 +133,47 @@ AWS manages security OF the cloud; customer are responsible for security IN the 
 - Meet Compliance Requirements – AWS manages dozens of compliance programs in its infrastructure. This means that segments of your compliance have already been completed.
 - Save Money – cut costs by using AWS data centers. Maintain the highest standard of s security without having to manage your own facility.
 - Scale Quickly – security scales with your AWS Cloud usage. No matter the size of your business, the AWS infrastructure is designed to keep your data safe.
+## AWS Cloud Compliance
+Help you create framework compliant with a certain framework (Example: HIPPA, PCI DSS,...). As systems are built on top of AWS Cloud infrastructure, compliance responsibilities will be shared. Compliance programs include:
+- Certifications / attestations.
+- Laws, regulations, and privacy.
+- Alignments / frameworks.
+### AWS Artifact
+AWS Artifact is your go-to, central resource for compliance-related information that matters to you.
+It provides on-demand access to AWS’ security and compliance reports and select online agreements.
+Reports available in AWS Artifact include our Service Organization Control (SOC) reports, Payment Card Industry (PCI) reports, and certifications from accreditation bodies across geographies and compliance verticals that validate the implementation and operating effectiveness of AWS security controls.
+Agreements available in AWS Artifact include the Business Associate Addendum (BAA) and the Nondisclosure Agreement (NDA).
+
+## Amazon GuardDuty
+Amazon GuardDuty offers threat detection and continuous security monitoring for malicious or unauthorized behavior to help you protect your AWS accounts and workloads.
+Intelligent threat detection service.
+Detects account compromise, instance compromise, malicious reconnaissance, and bucket compromise.
+Continuous monitoring for events across:
+- AWS CloudTrail Management Events.
+- AWS CloudTrail S3 Data Events.
+- Amazon VPC Flow Logs.
+- DNS Logs.
+
+## AWS WAF & AWS Shield
+### WAF:
+- AWS WAF is a web application firewall.
+- Protects against common exploits that could compromise application availability, compromise security, or consume excessive resources.
+- WAF lets you create rules to filter web traffic based on conditions that include IP addresses, HTTP headers and body, or custom URIs.
+- WAF makes it easy to create rules that block common web exploits like SQL injection and cross site scripting.
+- The rules are known as Web ACLs.
+
+### Shield:
+- AWS Shield is a managed Distributed Denial of Service (DDoS) protection service.
+- Safeguards web application running on AWS with always-on detection and automatic inline mitigations.
+- Helps to minimize application downtime and latency.
+- Two tiers – Standard and Advanced.
 
 ## VPC 
 ## VPN
 ## AWS Shield
 ## WAF 
 ## CloudFront
-## AWS Compliance
-## AWS Artifact
+
 ## AWS config
 ## IAM
 ## AWS Organization
