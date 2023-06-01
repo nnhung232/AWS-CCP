@@ -168,12 +168,92 @@ Continuous monitoring for events across:
 - Helps to minimize application downtime and latency.
 - Two tiers – Standard and Advanced.
 
-## VPC 
-## VPN
-## AWS Shield
-## WAF 
-## CloudFront
+## AWS Key Management Service (AWS KMS)
+AWS Key Management Service gives you centralized control over the encryption keys used to protect your data.
+You can create, import, rotate, disable, delete, define usage policies for, and audit the use of encryption keys used to encrypt your data.
+AWS Key Management Service is integrated with most other AWS services making it easy to encrypt the data you store in these services with encryption keys you control.
+AWS KMS is integrated with AWS CloudTrail which provides you the ability to audit who used which keys, on which resources, and when.
+AWS KMS enables developers to easily encrypt data, whether through 1-click encryption in the AWS Management Console or using the AWS SDK to easily add encryption in their application code.
 
+## AWS CloudHSM
+AWS CloudHSM is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the AWS Cloud.
+With CloudHSM, you can manage your own encryption keys using FIPS 140-2 Level 3 validated HSMs.
+CloudHSM offers you the flexibility to integrate with your applications using industry-standard APIs, such as PKCS#11, Java Cryptography Extensions (JCE), and Microsoft CryptoNG (CNG) libraries.
+
+## AWS Certificate Manager
+AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.
+SSL/TLS certificates are used to secure network communications and establish the identity of websites over the Internet as well as resources on private networks.
+AWS Certificate Manager removes the time-consuming manual process of purchasing, uploading, and renewing SSL/TLS certificates.
+
+## AWS Inspector and AWS Trusted Advisor
+### AWS Inspector:
+- Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS.
+- Inspector automatically assesses applications for vulnerabilities or deviations from best practices.
+- Uses an agent installed on EC2 instances.
+- Instances must be tagged.
+
+### AWS Trusted Advisor:
+- Trusted Advisor is an online resource that helps to reduce cost, increase performance, and improve security by optimizing your AWS environment.
+- Trusted Advisor provides real time guidance to help you provision your resources following best practices.
+- Advisor will advise you on Cost Optimization, Performance, Security, and Fault Tolerance.
+
+Trusted Advisor scans your AWS infrastructure and compares is to AWS best practices in five categories:
+- Cost Optimization.
+- Performance.
+- Security.
+- Fault Tolerance.
+- Service Limits.
+
+Trusted Advisor comes in two versions:
+Core Checks and Recommendations (free):
+- Access to the 7 core checks to help increase security and performance.
+- Checks include S3 bucket permissions, Security Groups, IAM use, MFA on root account, EBS public snapshots, RDS public snapshots.
+
+Full Trusted Advisor Benefits (business and enterprise support plans):
+- Full set of checks to help optimize your entire AWS infrastructure.
+- Advises on security, performance, cost, fault tolerance and service limits.
+- Additional benefits include weekly update notifications, alerts, automated actions with - CloudWatch and programmatic access using the AWS Support API.
+
+## AWS Single Sign-On (AWS SSO)
+AWS Single Sign-On is a cloud-based single sign-on (SSO) service that makes it easy to centrally manage SSO access to all your AWS accounts and cloud applications.
+It helps you manage SSO access and user permissions across all your AWS accounts in AWS Organizations.
+AWS SSO also helps you manage access and permissions to commonly used third-party software as a service (SaaS) applications, AWS SSO-integrated applications as well as custom applications that support Security Assertion Markup Language (SAML) 2.0.
+AWS SSO includes a user portal where your end-users can find and access all their assigned AWS accounts, cloud applications, and custom applications in one place.
+
+## Amazon Cognito
+Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.
+Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.
+The two main components of AWS Cognito are user pools and identity pools:
+- User pools are user directories that provide sign-up and sign-in options for your app users.
+- Identity pools enable you to grant your users access to other AWS services.
+You can use identity pools and user pools separately or together.
+
+## AWS Directory Services
+AWS provides several directory types.
+The following three types currently feature on the exam and will be covered on this page:
+- Active Directory Service for Microsoft Active Directory.
+- Simple AD.
+- AD Connector.
+As an alternative to the AWS Directory service you can build your own Microsoft AD DCs in the AWS cloud (on EC2).
+
+## AWS Systems Manager Parameter Store
+Provides secure, hierarchical storage for configuration data management and secrets management.
+It is highly scalable, available, and durable.
+You can store data such as passwords, database strings, and license codes as parameter values.
+You can store values as plaintext (unencrypted data) or ciphertext (encrypted data).
+You can then reference values by using the unique name that you specified when you created the parameter.
+
+## AWS Secrets Manager
+Like Parameter Store.
+Allows native and automatic rotation of keys.
+Fine-grained permissions.
+Central auditing for secret rotation
+
+## Amazon Virtual Private Cloud (VPC) 
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/e60a3d97-19e8-4183-b79f-34c77e3ea586)
+
+## VPN
+## CloudFront
 ## AWS config
 ## IAM
 ## AWS Organization
