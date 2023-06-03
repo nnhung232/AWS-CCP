@@ -642,7 +642,6 @@ You can use JSON or YAML to describe what AWS resources you want to create and c
 
 ## AWS CloudTrail
 ## AWS Resource for Security Support
-### Amazon Inspector
 ### AWS Report Abuse
 
 # Technology
