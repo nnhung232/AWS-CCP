@@ -23,10 +23,12 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 - Cloud: Fully deploy in cloud
 - On-Premise: tại chỗ. It sometimes called the private cloud
 - Hybrid: Là a way to connect infrastructure và application betwwen cloud-based resource và những resource ko ở trên cloud. *AWS Outpost* là service cho phép chạy AWS service trên on-premise infrastruture
+
 ## Cloud Architecture Design Principles
 - Design for failure and making sure that our architure is fault tolerant. We do that by using architecture that spanning multiple avaiablitiy zones, multiple regions
 - Elasticity: or auto-scaling depending on demand. (example: EC2 auto-scaling)
-- Loose coupling: 
+- Loose coupling: This means that IT systems should be designed in a way that reduces interdependencies—a change or a failure in one component should not cascade to other components.
+
 ## The 6 Pillars of the AWS Well-Architected Framework
 ### 1. Operational excellence
 Operational excellence pillar bao gồm ability to support development và run workloads effectively, gain insight into their operation, và continuously improve (*tóm gọn: là ability to run and monitor system*). 
