@@ -728,7 +728,94 @@ Security Groups provide a firewall/security layer at the instance level.
 - Edge Location
 - Direct Connect
 - Global vs Regional services
-## Core AWS services
+- 
+## AWS Analytics Services
+### Amazon Elastic Map Reduce
+Amazon EMR is a web service that enables businesses, researchers, data analysts, and developers to easily and cost-effectively process vast amounts of data.
+EMR utilizes a hosted Hadoop framework running on Amazon EC2 and Amazon S3.
+Managed Hadoop framework for processing huge amounts of data.
+Also support Apache Spark, HBase, Presto and Flink.
+Most commonly used for log analysis, financial analysis, or extract, translate and loading (ETL) activities.
+A Step is a programmatic task for performing some process on the data (e.g. count words).
+A cluster is a collection of EC2 instances provisioned by EMR to run your Steps.
+EMR uses Apache Hadoop as its distributed data processing engine, which is an open source, Java software framework that supports data-intensive distributed applications running on large clusters of commodity hardware.
+EMR is a good place to deploy Apache Spark, an open-source distributed processing used for big data workloads which utilizes in-memory caching and optimized query execution.
+You can also launch Presto clusters. Presto is an open-source distributed SQL query engine designed for fast analytic queries against large datasets.
+EMR launches all nodes for a given cluster in the same Amazon EC2 Availability Zone.
+You can access Amazon EMR by using the AWS Management Console, Command Line Tools, SDKS, or the EMR API.
+With EMR you have access to the underlying operating system (you can SSH in).
+### Amazon Athena
+Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.
+Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
+Athena is easy to use – simply point to your data in Amazon S3, define the schema, and start querying using standard SQL.
+Amazon Athena uses Presto with full standard SQL support and works with a variety of standard data formats, including CSV, JSON, ORC, Apache Parquet and Avro.
+While Amazon Athena is ideal for quick, ad-hoc querying and integrates with Amazon QuickSight for easy visualization, it can also handle complex analysis, including large joins, window functions, and arrays.
+Amazon Athena uses a managed Data Catalog to store information and schemas about the databases and tables that you create for your data stored in Amazon S3.
+
+### AWS Glue
+AWS Glue is a fully managed, pay-as-you-go, extract, transform, and load (ETL) service that automates the time-consuming steps of data preparation for analytics.
+AWS Glue automatically discovers and profiles data via the Glue Data Catalog, recommends and generates ETL code to transform your source data into target schemas.
+AWS Glue runs the ETL jobs on a fully managed, scale-out Apache Spark environment to load your data into its destination.
+AWS Glue also allows you to setup, orchestrate, and monitor complex data flows.
+You can create and run an ETL job with a few clicks in the AWS Management Console.
+Use AWS Glue to discover properties of data, transform it, and prepare it for analytics.
+Glue can automatically discover both structured and semi-structured data stored in data lakes on Amazon S3, data warehouses in Amazon Redshift, and various databases running on AWS.
+It provides a unified view of data via the Glue Data Catalog that is available for ETL, querying and reporting using services like Amazon Athena, Amazon EMR, and Amazon Redshift Spectrum.
+Glue automatically generates Scala or Python code for ETL jobs that you can further customize using tools you are already familiar with.
+AWS Glue is serverless, so there are no compute resources to configure and manage.
+
+### Amazon Kinesis
+Amazon Kinesis makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+Collection of services for processing streams of various data.
+Data is processed in “shards”.
+There are four types of Kinesis service, and these are detailed below.
+
+**1. Kinesis Video Streams**
+Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for analytics, machine learning (ML), and other processing.
+Durably stores, encrypts, and indexes video data streams, and allows access to data through easy-to-use APIs.
+Producers provide data streams.
+Stores data for 24 hours by default, up to 7 days.
+Consumers receive and process data.
+Can have multiple shards in a stream.
+Supports encryption at rest with server-side encryption (KMS) with a customer master key.
+
+**2. Kinesis Data Streams**
+Kinesis Data Streams enables you to build custom applications that process or analyze streaming data for specialized needs.
+Kinesis Data Streams enables real-time processing of streaming big data.
+Kinesis Data Streams is useful for rapidly moving data off data producers and then continuously processing the data.
+Kinesis Data Streams stores data for later processing by applications (key difference with Firehose which delivers data directly to AWS services).
+
+Common use cases include:
+- Accelerated log and data feed intake.
+- Real-time metrics and reporting.
+- Real-time data analytics.
+- Complex stream processing.
+
+**3. Kinesis Data Firehose**
+Kinesis Data Firehose is the easiest way to load streaming data into data stores and analytics tools.
+Captures, transforms, and loads streaming data.
+Enables near real-time analytics with existing business intelligence tools and dashboards.
+Kinesis Data Streams can be used as the source(s) to Kinesis Data Firehose.
+You can configure Kinesis Data Firehose to transform your data before delivering it.
+With Kinesis Data Firehose you don’t need to write an application or manage resources.
+Firehose can batch, compress, and encrypt data before loading it.
+Firehose synchronously replicates data across three AZs as it is transported to destinations.
+
+**4. Kinesis Data Analytics**
+Amazon Kinesis Data Analytics is the easiest way to process and analyze real-time, streaming data.
+Can use standard SQL queries to process Kinesis data streams.
+Provides real-time analysis.
+Use cases:
+- Generate time-series analytics.
+- Feed real-time dashboards.
+- Create real-time alerts and notifications.
+
+Quickly author and run powerful SQL code against streaming sources.
+Can ingest data from Kinesis Streams and Kinesis Firehose.
+Output to S3, RedShift, Elasticsearch and Kinesis Data Streams.
+Sits over Kinesis Data Streams and Kinesis Data Firehose.
+
+Each delivery stream stores data records for up to 24 hours.
 - Object Storage
   - S3
   - Glacier
