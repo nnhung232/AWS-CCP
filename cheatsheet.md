@@ -249,6 +249,100 @@ Allows native and automatic rotation of keys.
 Fine-grained permissions.
 Central auditing for secret rotation
 
+## AWS Identity and Access Management (IAM)
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources.
+You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources. Think of IAM as the control center to all AWS resources. 
+IAM makes it easy to provide multiple users secure access to AWS resources.
+When you first create an AWS account, you begin with a single sign-in identity that has complete access to all AWS services and resources in the account.
+This identity is called the AWS account root user and is accessed by signing in with the email address and password that you used to create the account.
+
+IAM can be used to manage:
+- Users.
+- Groups.
+- Access policies.
+- Roles.
+- User credentials.
+- User password policies.
+- Multi-factor authentication (MFA).
+- API keys for programmatic access (CLI).
+
+IAM provides the following features:
+- Shared access to your AWS account.
+- Granular permissions.
+- Secure access to AWS resources for application that run on Amazon EC2.
+- Multi-Factor authentication.
+- Identity federation.
+- Identity information for assurance.
+- PCI DSS compliance.
+- Integrated with many AWS services.
+- Eventually consistent.
+- Free to use.
+
+You can work with AWS Identity and Access Management in any of the following ways:
+- AWS Management Console.
+- AWS Command Line Tools.
+- AWS SDKs.
+- IAM HTTPS API.
+
+By default new users are created with NO access to any AWS services – they can only login to the AWS console.
+Permission must be explicitly granted to allow a user to access an AWS service.
+IAM users are individuals who have been granted access to an AWS account.
+
+Each IAM user has three main components:
+- A username.
+- A password.
+- Permissions to access various resources.
+
+You can apply granular permissions with IAM.
+You can assign users individual security credentials such as access keys, passwords, and multi-factor authentication devices.
+IAM is not used for application-level authentication.
+Identity Federation (including AD, Facebook etc.) can be configured allowing secure access to resources in an AWS account without creating an IAM user account.
+Multi-factor authentication (MFA) can be enabled/enforced for the AWS account and for individual users under the account.
+MFA uses an authentication device that continually generates random, six-digit, single-use authentication codes.
+
+You can authenticate using an MFA device in the following two ways:
+- Through the AWS Management Console – the user is prompted for a user name, password, and authentication code.
+- Using the AWS API – restrictions are added to IAM policies and developers can request temporary security credentials and pass MFA parameters in their AWS STS API requests.
+- Using the AWS CLI by obtaining temporary security credentials from STS (aws sts get-session-token).
+
+It is a best practice to always setup multi-factor authentication on the root account.
+IAM is universal (global) and does not apply to regions.
+IAM replicates data across multiple data centers around the world.
+The “root account” is the account created when you setup the AWS account. It has complete Admin access and is the only account that has this access by default.
+It is a best practice to avoid using the root account for anything other than billing.
+Power user access allows all permissions except the management of groups and users in IAM.
+Temporary security credentials consist of the AWS access key ID, secret access key, and security token.
+IAM can assign temporary security credentials to provide users with temporary access to services/resources.
+To sign-in you must provide your account ID or account alias in addition to a user name and password.
+The sign-in URL includes the account ID or account alias, e.g.:
+https://My_AWS_Account_ID.signin.aws.amazon.com/console/
+Alternatively, you can sign-in at the following URL and enter your account ID or alias manually: https://console.aws.amazon.com/
+IAM integrates with many different AWS services.
+Authentication Methods
+
+Console password:
+- A password that the user can enter to sign in to interactive sessions such as the AWS Management Console.
+- You can allow users to change their own passwords.
+- You can allow selected IAM users to change their passwords by disabling the option for all users and using an IAM policy to grant permissions for the selected users.
+
+Access Keys:
+- A combination of an access key ID and a secret access key.
+- You can assign two active access keys to a user at a time.
+- These can be used to make programmatic calls to AWS when using the API in program code or at a command prompt when using the AWS CLI or the AWS PowerShell tools.
+- You can create, modify, view, or rotate access keys.
+- When created IAM returns the access key ID and secret access key.
+- The secret access is returned only at creation time and if lost a new key must be created.
+- Ensure access keys and secret access keys are stored securely.
+- Users can be given access to change their own keys through IAM policy (not from the console).
+- You can disable a user’s access key which prevents it from being used for API calls.
+
+Server certificates:
+- SSL/TLS certificates that you can use to authenticate with some AWS services.
+- AWS recommends that you use the AWS Certificate Manager (ACM) to provision, manage and deploy your server certificates.
+- Use IAM only when you must support HTTPS connections in a region that is not supported by ACM.
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/fd616bf0-742e-4ec4-a6f8-c5d3f7da049a)
+
+
 ## Amazon Virtual Private Cloud (VPC) 
 ![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/e60a3d97-19e8-4183-b79f-34c77e3ea586)
 A virtual private cloud (VPC) is a virtual network dedicated to your AWS account.
@@ -337,7 +431,6 @@ VPC with a Private Subnet Only and Hardware VPN Access:
 - Your instances run in a private, isolated section of the AWS cloud with a private subnet whose instances are not addressable from the Internet.
 - You can connect this private subnet to your corporate data center via an IPsec Virtual Private Network (VPN) tunnel.
 - Creates a /16 network with a /24 subnet and provisions an IPsec VPN tunnel between your Amazon VPC and your corporate network.
-
 
 ## VPN
 ## CloudFront
