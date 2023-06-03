@@ -342,6 +342,128 @@ Server certificates:
 - Use IAM only when you must support HTTPS connections in a region that is not supported by ACM.
 ![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/fd616bf0-742e-4ec4-a6f8-c5d3f7da049a)
 
+### IAM Users
+An IAM user is an entity that represents a person or service.
+
+Can be assigned:
+- An access key ID and secret access key for programmatic access to the AWS API, CLI, SDK, and other development tools.
+- A password for access to the management console.
+
+By default, users cannot access anything in your account.
+The account root user credentials are the email address used to create the account and a password.
+The root account has full administrative permissions, and these cannot be restricted.
+
+Best practice for root accounts:
+- Don’t use the root user credentials.
+- Don’t share the root user credentials.
+- Create an IAM user and assign administrative permissions as required.
+- Enable MFA.
+
+IAM users can be created to represent applications, and these are known as “service accounts”.
+You can have up to 5000 users per AWS account.
+Each user account has a friendly name and an ARN which uniquely identifies the user across AWS.
+
+A unique ID is also created which is returned only when you create the user using the API, Tools for Windows PowerShell, or the AWS CLI.
+You should create individual IAM accounts for users (best practice not to share accounts).
+The Access Key ID and Secret Access Key are not the same as a password and cannot be used to login to the AWS console.
+The Access Key ID and Secret Access Key can only be used once and must be regenerated if lost.
+A password policy can be defined for enforcing password length, complexity etc. (applies to all users).
+You can allow or disallow the ability to change passwords using an IAM policy.
+Access keys and passwords should be changed regularly.
+
+### Groups
+Groups are collections of users and have policies attached to them.
+A group is not an identity and cannot be identified as a principal in an IAM policy.
+Use groups to assign permissions to users.
+Use the principle of least privilege when assigning permissions.
+You cannot nest groups (groups within groups).
+
+### Roles
+Roles are created and then “assumed” by trusted entities and define a set of permissions for making AWS service requests.
+With IAM Roles you can delegate permissions to resources for users and services without using permanent credentials (e.g. user name and password).
+IAM users or AWS services can assume a role to obtain temporary security credentials that can be used to make AWS API calls.
+You can delegate using roles.
+There are no credentials associated with a role (password or access keys).
+IAM users can temporarily assume a role to take on permissions for a specific task.
+A role can be assigned to a federated user who signs in using an external identity provider.
+Temporary credentials are primarily used with IAM roles and automatically expire.
+Roles can be assumed temporarily through the console or programmatically with the AWS CLI, Tools for Windows PowerShell, or the API.
+
+IAM roles with EC2 instances:
+- IAM roles can be used for granting applications running on EC2 instances permissions to AWS API requests using instance profiles.
+- Only one role can be assigned to an EC2 instance at a time.
+- A role can be assigned at the EC2 instance creation time or at any time afterwards.
+- When using the AWS CLI or API instance profiles must be created manually (it’s automatic and transparent through the console).
+- Applications retrieve temporary security credentials from the instance metadata.
+
+Role Delegation:
+- Create an IAM role with two policies:
+  - Permissions policy – grants the user of the role the required permissions on a resource.
+  - Trust policy – specifies the trusted accounts that are allowed to assume the role.
+- Wildcards (\*) cannot be specified as a principal.
+- A permissions policy must also be attached to the user in the trusted account.
+
+### Policies
+Policies are documents that define permissions and can be applied to users, groups, and roles.
+Policy documents are written in JSON (key value pair that consists of an attribute and a value).
+All permissions are implicitly denied by default.
+The most restrictive policy is applied.
+The IAM policy simulator is a tool to help you understand, test, and validate the effects of access control policies.
+The Condition element can be used to apply further conditional logic.
+
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/2ef8a276-e285-4968-bcc6-d01feb37425f)
+
+### Comparing AWS IAM Role vs Policy vs Group
+In AWS IAM, roles, policies, and groups are all used to manage access to AWS resources.
+A role defines a set of permissions and access policies that determine what actions a user or AWS service can take. Roles are useful when you want to grant (temporary) access to AWS resources to a third-party entity, such as an AWS service or a user outside of your AWS account.
+A policy, on the other hand, is a document that defines a set of permissions and specifies which AWS resources those permissions grant access to. Policies can be attached to roles, groups, or individual users to define their level of access to AWS resources. Policies are useful when you want to define and enforce specific permissions for a particular resource or set of resources.
+A group is a collection of users that share common permissions. Groups make it easy to manage permissions for multiple users at once, as policies can be attached to a group and apply to all users within that group. By assigning permissions to a group, you can grant or revoke access for multiple users with a single action.
+Overall, roles are used to grant access to specific resources or services, policies are used to define the permissions for those resources or services, and groups are used to organize and manage multiple users with similar permissions. Overall, roles, policies, and groups are all critical components of AWS IAM, each serving a unique purpose in managing user access to AWS resources.
+
+### AWS Security Token Service (AWS STS)
+The AWS STS is a web service that enables you to request temporary, limited-privilege credentials for IAM users or for users that you authenticate (federated users).
+
+Temporary security credentials work almost identically to long-term access key credentials that IAM users can use, with the following differences:
+- Temporary security credentials are short-term.
+- They can be configured to last anywhere from a few minutes to several hours.
+- After the credentials expire, AWS no longer recognizes them or allows any kind of access to API requests made with them.
+- Temporary security credentials are not stored with the user but are generated dynamically and provided to the user when requested.
+- When (or even before) the temporary security credentials expire, the user can request new credentials, if the user requesting them still has permission to do so.
+
+Advantages of STS are:
+- You do not have to distribute or embed long-term AWS security credentials with an application.
+- You can provide access to your AWS resources to users without having to define an AWS identity for them (temporary security credentials are the basis for IAM Roles and ID Federation).
+- The temporary security credentials have a limited lifetime, so you do not have to rotate them or explicitly revoke them when they’re no longer needed.
+- After temporary security credentials expire, they cannot be reused (you can specify how long the credentials are valid for, up to a maximum limit)
+
+Users can come from three sources.
+**1. Federation (typically AD):**
+- Uses SAML 2.0.
+- Grants temporary access based on the users AD credentials.
+- Does not need to be a user in IAM.
+- Single sign-on allows users to login to the AWS console without assigning IAM credentials.
+**2. Federation with Mobile Apps:**
+- Use Facebook/Amazon/Google or other OpenID providers to login.
+**3. Cross Account Access:**
+- Allows users from one AWS account access resources in another.
+- To make a request in a different account the resource in that account must have an attached resource-based policy with the permissions you need.
+- Or you must assume a role (identity-based policy) within that account with the permissions you need.
+
+### IAM Best Practices
+Lock away the AWS root user access keys.
+Create individual IAM users.
+Use AWS defined policies to assign permissions whenever possible.
+Use groups to assign permissions to IAM users.
+Grant least privilege.
+Use access levels to review IAM permissions.
+Configure a strong password policy for users.
+Enable MFA.
+Use roles for applications that run on AWS EC2 instances.
+Delegate by using roles instead of sharing credentials.
+Rotate credentials regularly.
+Remove unnecessary credentials.
+Use policy conditions for extra security.
+Monitor activity in your AWS account.
 
 ## Amazon Virtual Private Cloud (VPC) 
 ![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/e60a3d97-19e8-4183-b79f-34c77e3ea586)
