@@ -646,10 +646,7 @@ You can use JSON or YAML to describe what AWS resources you want to create and c
 # Technology
 ## Deployment and Operating in the AWS
 ### On premise & Hybrid
-- Snowball
-- Storage Gateway
 - DNS
-
 
 ### NAT Instances
 NAT instances are managed by you.
@@ -665,7 +662,7 @@ Can scale automatically up to 45Gbps.
 No need to patch.
 Not associated with any security groups.
 
-## AWS Direct Connect (DX)
+### AWS Direct Connect (DX)
 ![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/91a9bcfe-c342-4f52-b168-ae2c566b91fa)
 AWS Direct Connect is a network service that provides an alternative to using the Internet to connect a customer’s on-premises sites to AWS.
 Data is transmitted through a private network connection between AWS and a customer’s data center or corporate network.
@@ -688,7 +685,7 @@ Each connection consists of a single dedicated connection between ports on the c
 for HA you must have 2 DX connections – can be active/active or active/standby.
 Route tables need to be updated to point to a Direct Connect connection.
 
-## AWS Global Accelerator
+### AWS Global Accelerator
 AWS Global Accelerator is a service that improves the availability and performance of applications with local or global users.
 It provides static IP addresses that act as a fixed entry point to application endpoints in a single or multiple AWS Regions, such as Application Load Balancers, Network Load Balancers or EC2 instances.
 Uses the AWS global network to optimize the path from users to applications, improving the performance of TCP and UDP traffic.
@@ -721,13 +718,14 @@ Security Groups provide a firewall/security layer at the instance level.
 - OpsWorks
 - SDKs
 - CLI
+
 ## AWS Global Infrastructure
 - Region
 - Avaiablity Zone
 - Edge Location
 - Direct Connect
 - Global vs Regional services
-- 
+
 ## AWS Analytics Services
 ### Amazon Elastic Map Reduce
 Amazon EMR is a web service that enables businesses, researchers, data analysts, and developers to easily and cost-effectively process vast amounts of data.
@@ -743,6 +741,7 @@ You can also launch Presto clusters. Presto is an open-source distributed SQL qu
 EMR launches all nodes for a given cluster in the same Amazon EC2 Availability Zone.
 You can access Amazon EMR by using the AWS Management Console, Command Line Tools, SDKS, or the EMR API.
 With EMR you have access to the underlying operating system (you can SSH in).
+
 ### Amazon Athena
 Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.
 Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
@@ -899,7 +898,66 @@ You can integrate CloudTrail with CloudWatch Logs to deliver data events capture
 CloudTrail log file integrity validation feature allows you to determine whether a CloudTrail log file was unchanged, deleted, or modified since CloudTrail delivered it to the specified Amazon S3 bucket.
 
 ## AWS Content Delivery and DNS Services
+### Amazon Route 53
+Amazon Route 53 is the AWS Domain Name Service.
 
+Route 53 performs three main functions:
+- Domain registration – Route 53 allows you to register domain names.
+- Domain Name Service (DNS) – Route 53 translates name to IP addresses using a global network of authoritative DNS servers.
+- Health checking – Route 53 sends automated requests to your application to verify that it’s reachable, available, and functional.
+
+You can use any combination of these functions.
+
+Route 53 benefits:
+- Domain registration.
+- DNS service.
+- Traffic Flow (send users to the best endpoint).
+- Health checking.
+- DNS failover (automatically change domain endpoint if system fails).
+- Integrates with ELB, S3, and CloudFront as endpoints.
+
+Routing policies determine how Route 53 DNS responds to queries.
+- Simple: Simple DNS response providing the IP address associated with a name
+- Failover: If primary is down (based on health checks), routes to secondary destination
+- Geolocation:	Uses geographic location you’re in (e.g. Europe) to route you to the closest region
+- Geoproximity:	Routes you to the closest region within a geographic area
+- Latency: Directs you based on the lowest latency route to resources
+- Multivalue answer: Returns several IP addresses and functions as a basic load balancer
+- Weighted: Uses the relative weights assigned to resources to determine which to route to
+
+### Amazon CloudFront
+Amazon CloudFront is a content delivery network (CDN) that allows you to store (cache) your content at “edge locations” located around the world.
+This allows customers to access content more quickly and provides security against DDoS attacks.
+CloudFront can be used for data, videos, applications, and APIs.
+
+CloudFront benefits:
+- Cache content at Edge Location for fast distribution to customers.
+- Built-in Distributed Denial of Service (DDoS) attack protection.
+- Integrates with many AWS services (S3, EC2, ELB, Route 53, Lambda).
+
+Origins and Distributions:
+- An origin is the origin of the files that the CDN will distribute.
+- Origins can be either an S3 bucket, an EC2 instance, an Elastic Load Balancer, or Route 53 – can also be external (non-AWS).
+- To distribute content with CloudFront you need to create a distribution.
+
+CloudFront uses Edge Locations and Regional Edge Caches:
+- An edge location is the location where content is cached (separate to AWS regions/AZs).
+- Requests are automatically routed to the nearest edge location.
+- Regional Edge Caches are located between origin web servers and global edge locations and have a larger cache.
+- Regional Edge caches aim to get content closer to users.
+
+The diagram below shows where Regional Edge Caches and Edge Locations are placed in relation to end users:
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/7f82c413-cdbb-4958-a1d0-d306545cc6fd)
+
+## AWS Storage Services
+### Amazon Simple Storage Service (S3)
+### AWS Snowball
+### Amazon Elastic Block Store (EBS)
+### Instance Store Volumes
+### Amazon Elastic File System (EFS)
+### AWS Storage Gateway
+
+AWS Backup
 - Object Storage
   - S3
   - Glacier
