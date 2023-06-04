@@ -1583,6 +1583,83 @@ Most commonly used for log analysis, financial analysis, or extract, translate a
 | Simple Workflow Service (SWF)	| Need to support external processes or specialized execution logic	| Human-enabled workflows like an order fulfilment system or for procedural requests |
 | Amazon MQ	| Message broker service for Apache Active MQ and RabbitMQ	| Need a message queue that supports industry standard APIs and protocols; migrate queues to AWS |
 
+### Amazon Simple Notification Service 
+Amazon Simple Notification Service (Amazon SNS) is a web service that makes it easy to set up, operate, and send notifications from the cloud.
+Amazon SNS is used for building and integrating loosely-coupled, distributed applications.
+SNS provides instantaneous, push-based delivery (no polling).
+
+SNS concepts:
+- Topics – how you label and group different endpoints that you send messages to.
+- Subscriptions – the endpoints that a topic sends messages to.
+- Publishers – the person/alarm/event that gives SNS the message that needs to be sent.
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/c8d7ae2e-60b7-4ca5-a2a6-039922d1a055)
+SNS usage:
+- Send automated or manual notifications.
+- Send notification to email, mobile (SMS), SQS, and HTTP endpoints.
+- Closely integrated with other AWS services such as CloudWatch so that alarms, events, and actions in your AWS account can trigger notifications.
+
+Uses simple APIs and easy integration with applications.
+Flexible message delivery is provided over multiple transport protocols.
+Offered under an inexpensive, pay-as-you-go model with no up-front costs.
+The web-based AWS Management Console offers the simplicity of a point-and-click interface.
+Data type is JSON.
+SNS supports a wide variety of needs including event notification, monitoring applications, workflow systems, time-sensitive information updates, mobile applications, and any other application that generates or consumes notifications.
+
+SNS Subscribers:
+- HTTP.
+- HTTPS.
+- Email.
+- Email-JSON.
+- SQS.
+- Application.
+- Lambda.
+
+SNS supports notifications over multiple transport protocols:
+- HTTP/HTTPS – subscribers specify a URL as part of the subscription registration.
+- Email/Email-JSON – messages are sent to registered addresses as email (text-based or JSON-object).
+- SQS – users can specify an SQS standard queue as the endpoint.
+- SMS – messages are sent to registered phone numbers as SMS text messages.
+
+Topic names are limited to 256 characters.
+SNS supports CloudTrail auditing for authenticated calls.
+SNS provides durable storage of all messages that it receives (across multiple AZs).
+
+### Amazon Simple Queue Service (Amazon SQS)
+Amazon Simple Queue Service (SQS) is a distributed queue system.
+Amazon SQS enables you to send, store, and receive messages between software components.
+An Amazon SQS queue is a temporary repository for messages that are awaiting processing.
+The SQS queue acts as a buffer between the component producing and saving data, and the component receiving the data for processing.
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/0ac853c1-2a98-4812-bf37-ff5e6cc9ee99)
+This is known as decoupling / loose coupling and helps to enable elasticity for your application.
+Amazon SQS is pull-based, not push-based (like Amazon SNS).
+
+### Amazon Simple Workflow Service (Amazon SWF)
+Amazon Simple Workflow Service (SWF) is a web service that makes it easy to coordinate work across distributed application components.
+Amazon SWF is used for processing background jobs that have parallel or sequential steps.
+You can think of Amazon SWF as a fully managed state tracker and task coordinator.
+Use Amazon SWF if your app’s steps take more than 500 milliseconds to complete, you need to track the state of processing, or you need to recover or retry if a task fails.
+With SWF you can create distributed asynchronous systems as workflows.
+Tracks the state of your workflow which you interact and update via API.
+Best suited for human-enabled workflows like an order fulfilment system or for procedural requests.
+
+AWS recommends that for new applications customers consider AWS Step Functions instead of SWF.
+
+### Amazon MQ
+Amazon MQ is a managed message broker service for ActiveMQ.
+Amazon MQ supports industry-standard APIs and protocols so you can migrate messaging and applications without rewriting code.
+Amazon MQ provides cost-efficient and flexible messaging capacity.
+Amazon MQ manages the administration and maintenance of ActiveMQ brokers and automatically provisions infrastructure for high availability.
+
+### AWS Step Functions
+AWS Step Functions can be used to coordinate the components of distributed applications as a series of steps in a visual workflow.
+You can quickly build and run state machines to execute the steps of your application in a reliable and scalable fashion.
+
+How it works:
+  1. Define the steps of your workflow in the JSON-based Amazon States Language. The visual console automatically graphs each step in the order of execution.
+  2. Start an execution to visualize and verify the steps of your application are operating as intended. The console highlights the real-time status of each step and provides a detailed history of every execution.
+  3. AWS Step Functions operates and scales the steps of your application and underlying compute for you to help ensure your application executes reliably under increasing demand.
+It is a managed workflow and orchestration platform.
+
 ## AWS Machine Learning Services
 
 ### AWS Rekognition
