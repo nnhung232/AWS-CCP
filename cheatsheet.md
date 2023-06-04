@@ -1140,6 +1140,120 @@ Your applications and end users can access reliable, performant, and secure shar
 In addition to providing a rich set of administrative and security features, it also integrates with Microsoft Active Directory (AD). For a variety of workloads, Amazon FSx provides high levels of file system throughput and IOPS as well as consistent sub-millisecond latencies.
 Based on Windows Server, Amazon FSx includes a rich set of administrative features, including end-user file restore, user quotas, and access control lists (ACLs). Windows Server supports the SMB protocol natively, allowing Windows-based applications to access shared file storage. SMB file shares can also be accessed from Linux and MacOS, so any application or user can access the storage. AWS Microsoft Managed AD and your on-premises Microsoft Active Directory can be integrated with Amazon FSx to control user access.
 
+## AWS Compute Services
+### Amazon EC2
+Amazon Elastic Compute Cloud (Amazon EC2) is a web service with which you can run virtual server “instances” in the cloud.
+Amazon EC2 instances can run the Windows, Linux, or MacOS operating systems.
+The EC2 simple web service interface allows you to obtain and configure capacity with minimal friction.
+EC2 is designed to make web-scale cloud computing easier for developers.
+Amazon EC2 changes the economics of computing by allowing you to pay only for capacity that you use.
+Amazon EC2 provides developers the tools to build failure resilient applications and isolate them from common failure scenarios.
+
+Benefits of EC2 include:
+- Elastic Web-Scale computing – you can increase or decrease capacity within minutes not hours and commission one to thousands of instances simultaneously.
+- Completely controlled – You have complete control include root access to each instance and can stop and start instances without losing data and using web service APIs.
+- Flexible Cloud Hosting Services – you can choose from multiple instance types, operating systems, and software packages as well as instances with varying memory, CPU, and storage configurations.
+- Integrated – EC2 is integrated with most AWS services such as S3, RDS, and VPC to provide a complete, secure solution.
+- Reliable – EC2 offers a highly reliable environment where replacement instances can be rapidly and predictably commissioned with SLAs of 99.99% for each region.
+- Secure – EC2 works in conjunction with VPC to provide a secure location with an IP address range you specify and offers Security Groups, Network ACLs, and IPSec VPN features.
+- Inexpensive – Amazon passes on the financial benefits of scale by charging very low rates and on a capacity consumed basis.
+
+An Amazon Machine Image (AMI) is a special type of virtual appliance that is used to create a virtual machine within the Amazon Elastic Compute Cloud (“EC2”).
+
+An AMI includes the following:
+- One or more EBS snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an operating system, an application server, and applications).
+- Launch permissions that control which AWS accounts can use the AMI to launch instances.
+- A block device mapping that specifies the volumes to attach to the instance when it’s launched.
+
+AMIs come in three main categories:
+- Community AMIs – free to use, generally you just select the operating system you want.
+- AWS Marketplace AMIs – pay to use, generally come packaged with additional, licensed software.
+- My AMIs – AMIs that you create yourself.
+
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/904ceb8e-bbbf-4d80-bbe9-52fe19677593)
+
+Metadata and User Data:
+- User data is data that is supplied by the user at instance launch in the form of a script.
+- Instance metadata is data about your instance that you can use to configure or manage the running instance.
+- User data is limited to 16KB.
+- User data and metadata are not encrypted.
+- Instance metadata is available at http://169.254.169.254/latest/meta-data.
+The Instance Metadata Query tool allows you to query the instance metadata without having to type out the full URI or category names.
+
+### Pricing
+On-demand:
+- Good for users that want the low cost and flexibility of EC2 without any up-front payment or long-term commitment.
+- Applications with short term, spiky, or unpredictable workloads that cannot be interrupted.
+- Applications being developed or tested on EC2 for the first time.
+
+Reserved:
+- Applications with steady state or predictable usage.
+- Applications that require reserved capacity.
+- Users can make up-front payments to reduce their total computing costs even further.
+- Standard Reserved Instances (RIs) provide up to 75% off on-demand price.
+- Convertible RIs provide up to 54% off on-demand price – provides the capability to change the attributes of the RI if the exchange results in the creation of RIs of equal or greater value.
+- Scheduled RIs are available to launch within the time window you reserve. This option allows you to match your capacity reservation to a predictable recurring schedule that only requires a fraction of a day, a week, or a month.
+
+Spot:
+- Applications that have flexible start and end times.
+- Applications that are only feasible at very low compute prices.
+- Users with an urgent need for a large amount of additional compute capacity.
+- If Amazon terminate your instances you do not pay, if you terminate you pay for the hour.
+
+Dedicated hosts:
+- Physical servers dedicated just for your use.
+- You then have control over which instances are deployed on that host.
+- Available as On-Demand or with Dedicated Host Reservation.
+- Useful if you have server-bound software licenses that use metrics like per-core, per-socket, or per-VM.
+- Each dedicated host can only run one EC2 instance size and type.
+- Good for regulatory compliance or licensing requirements.
+- Predictable performance.
+- Complete isolation.
+- Most expensive option.
+- Billing is per host.
+
+Dedicated instances:
+- Virtualized instances on hardware just for you.
+- Also uses physically dedicated EC2 servers.
+- Does not provide the additional visibility and controls of dedicated hosts (e.g. how instances are placed on a server).
+- Billing is per instance.
+- May share hardware with other non-dedicated instances in the same account.
+- Available as On-Demand, Reserved Instances, and Spot Instances.
+- Cost additional $2 per hour per region.
+
+Savings Plans:
+- Savings Plans is a flexible pricing model that provides savings of up to 72% on your AWS compute usage.
+- This pricing model offers lower prices on Amazon EC2 instances usage, regardless of instance family, size, OS, tenancy, or AWS Region.
+- Also applies to AWS Fargate and AWS Lambda usage.
+
+### Instance Types
+Amazon EC2 provides a wide selection of instance types optimized to fit different use cases.
+Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications.
+Each instance type includes one or more instance sizes, allowing you to scale your resources to the requirements of your target workload.
+The table below helps you to understand some of the various EC2 instance families and their intended use case:
+| Family |	Hint |	Purpose/Design |
+|--------|-------|-----------------|
+| D	| DATA	| Heavy data usage (e.g. file servers, DWs) |
+| R	| RAM	| Memory optimized |
+| M	| MAIN	| General purpose (e.g. app servers) |
+| C	| COMPUTE	| Compute optimized |
+| G	| GRAPHICS	| Graphics intensive workloads |
+| I	| IOPS	| Storage I/O optimized (e.g. NoSQL, DWs) |
+| F	| FAST	| FPGA hardware acceleration for applications |
+| T	| CHEAP (think T2)	| Lowest cost (e.g. T2-micro) |
+| P	| GPU	| GPU requirements |
+| X	| EXTREME RAM	| Heavy memory usage (e.g. SAP HANA, Apache Spark) |
+| U	| HIGH MEMORY	| High memory and bare metal performance – use for in memory DBs including | SAP HANA |
+| Z	| HGH COMPUTE & MEMORY	| Fast CPU, high memory, and NVMe-based SSDs – use when high overall performance is required |
+| H	| HIGH DISK THROUGHPUT	| Up to 16 TB of HDD-based local storage |
+
+### Amazon Elastic Container Service (ECS)
+Amazon Elastic Container Service (ECS) is another product in the AWS Compute category. It provides a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.
+Amazon ECS eliminates the need for you to install, operate, and scale your own cluster management infrastructure.
+Using API calls you can launch and stop container-enabled applications, query the complete state of clusters, and access many familiar features like security groups, Elastic Load Balancing, EBS volumes and IAM roles.
+Amazon ECS can be used to schedule the placement of containers across clusters based on resource needs and availability requirements.
+An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
+There are two launch types, and the table below describes some of the differences between the two launch types:
 
 - EC2 (AMI, Storage options, types)
 - ELB (Classic, application, network)
