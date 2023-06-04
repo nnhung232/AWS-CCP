@@ -1254,6 +1254,78 @@ Using API calls you can launch and stop container-enabled applications, query th
 Amazon ECS can be used to schedule the placement of containers across clusters based on resource needs and availability requirements.
 An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
 There are two launch types, and the table below describes some of the differences between the two launch types:
+| Amazon EC2	| Amazon Fargate |
+| - | - |
+| You explicitly provision EC2 instances	| The control plane asks for resources and Fargate automatically provisions |
+| You’re responsible for upgrading, patching, care of EC2 pool	| Fargate provisions compute as needed |
+| You must handle cluster optimization	| Fargate handles cluster optimization |
+| More granular control over infrastructure	| Limited control, as infrastructure is automated |
+
+The Elastic container registry (ECR) is a managed AWS Docker registry service for storing, managing, and deploying Docker images.
+There is no additional charge for Amazon ECS. You pay for AWS resources (e.g. EC2 instances or EBS volumes) you create to store and run your application.
+Amazon ECR is integrated with Amazon EC2 Container Service (ECS).
+With Amazon ECR, there are no upfront fees or commitments. You pay only for the amount of data you store in your repositories and data transferred to the Internet.
+
+### AWS Lambda
+AWS Lambda is a serverless computing technology that allows you to run code without provisioning or managing servers.
+AWS Lambda executes code only when needed and scales automatically.
+You pay only for the compute time you consume (you pay nothing when your code is not running).
+
+Benefits of AWS Lambda:
+- No servers to manage.
+- Continuous scaling.
+- Millisecond billing.
+- Integrates with almost all other AWS services.
+
+Primary use cases for AWS Lambda:
+- Data processing.
+- Real-time file processing.
+- Real-time stream processing.
+- Build serverless backends for web, mobile, IOT, and 3rd party API requests.
+
+### Amazon LightSail
+Amazon LightSail Instances
+Amazon LightSail is one of the newest services in the AWS Compute suite of products. Amazon LightSail is great for users who do not have deep AWS technical expertise as it makes it very easy to provision compute services.
+Amazon LightSail provides developers compute, storage, and networking capacity and capabilities to deploy and manage websites, web applications, and databases in the cloud.
+Amazon LightSail includes everything you need to launch your project quickly – a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP.
+Amazon LightSail provides preconfigured virtual private servers (instances) that include everything required to deploy and application or create a database.
+The underlying infrastructure and operating system is managed by Amazon LightSail.
+Best suited to projects that require a few dozen instances or fewer.
+Provides a simple management interface.
+Good for blogs, websites, web applications, e-commerce etc.
+Can deploy load balancers and attach block storage.
+Public API.
+Limited to 20 Amazon LightSail instances, 5 static IPs, 3 DNS zones, 20 TB block storage, 40 databases, and 5 load balancers per account.
+Up to 20 certificates per calendar year.
+Can connect to each other and other AWS resources through public Internet and private (VPC peering) networking.
+Application templates include WordPress, WordPress Multisite, Drupal, Joomla!, Magento, Redmine, LAMP, Nginx (LEMP), MEAN, Node.js, and more.
+Amazon LightSail currently supports 6 Linux or Unix-like distributions: Amazon Linux, CentOS, Debian, FreeBSD, OpenSUSE, and Ubuntu, as well as 2 Windows Server versions: 2012 R2 and 2016.
+### Amazon LightSail Databases
+Amazon LightSail databases are instances that are dedicated to running databases.
+An Amazon LightSail database can contain multiple user-created databases, and you can access it by using the same tools and applications that you use with a stand-alone database.
+Amazon LightSail managed databases provide an easy, low maintenance way to store your data in the cloud.
+Amazon LightSail manages a range of maintenance activities and security for your database and its underlying infrastructure.
+Amazon LightSail automatically backs up your database and allows point in time restore from the past 7 days using the database restore tool.
+Amazon LightSail databases support the latest major versions of MySQL. Currently, these versions are 5.6, 5.7, and 8.0 for MySQL.
+Amazon LightSail databases are available in Standard and High Availability plans.
+High Availability plans add redundancy and durability to your database, by automatically creating standby database in a separate Availability Zone.
+Amazon LightSail is very affordable.
+Amazon LightSail plans are billed on an on-demand hourly rate, so you pay only for what you use.
+For every Amazon LightSail plan you use, we charge you the fixed hourly price, up to the maximum monthly plan cost.
+
+### AWS Elastic Beanstalk
+AWS Elastic Beanstalk is the fastest and simplest way to get web applications up and running on AWS.
+Developers simply upload their application code, and the service automatically handles all the details such as resource provisioning, load balancing, auto-scaling, and monitoring.
+Elastic Beanstalk is ideal if you have a PHP, Java, Python, Ruby, Node.js, .NET, Go, or Docker web application.
+Elastic Beanstalk uses core AWS services such as Amazon EC2, Amazon Elastic Container Service (Amazon ECS), Auto Scaling, and Elastic Load Balancing to easily support applications that need to scale to serve millions of users.
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/1ba3347e-e991-463a-a152-352289482672)
+
+### AWS Batch
+AWS Batch enables developers, scientists, and engineers to run hundreds of thousands of batch computing jobs easily and efficiently on AWS.
+AWS Batch dynamically provisions the optimal quantity and type of compute resources (e.g., CPU or memory optimized instances) based on the volume and specific resource requirements of the batch jobs submitted.
+With AWS Batch, you simply package the code for your batch jobs, specify their dependencies, and submit your batch job using the AWS Management Console, CLIs, or SDKs.
+AWS Batch allows you to specify execution parameters and job dependencies, and facilitates integration with a broad range of popular batch computing workflow engines and languages (e.g., Pegasus WMS, Luigi, and AWS Step Functions).
+AWS Batch efficiently and dynamically provisions and scales Amazon EC2 and Spot Instances based on the requirements of your jobs. AWS Batch provides default job queues and compute environment definitions that enable you to get started quickly.
 
 - EC2 (AMI, Storage options, types)
 - ELB (Classic, application, network)
