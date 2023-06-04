@@ -1916,54 +1916,132 @@ Price is dependent on the amount of memory allocated to the function.
 Amazon Elastic Block Store (EBS) Pricing
 
 Pricing is based on three factors:
+- Volumes – volume storage for all EBS volumes type is charged by the amount of GB provisioned per month.
+- Snapshots – based on the amount of space consumed by snapshots in S3. Copying snapshots is charged on the amount of data copied across regions.
+- Data transfer – inbound data transfer is free, outbound data transfer charges are tiered.
 
-Volumes – volume storage for all EBS volumes type is charged by the amount of GB provisioned per month.
-Snapshots – based on the amount of space consumed by snapshots in S3. Copying snapshots is charged on the amount of data copied across regions.
-Data transfer – inbound data transfer is free, outbound data transfer charges are tiered.
-Amazon DynamoDB Pricing
+### Amazon DynamoDB Pricing
 Charged based on:
+- Provisioned throughput (write).
+- Provisioned throughput (read).
+- Indexed data storage.
+- Data transfer – no charge for data transfer between DynamoDB and other AWS services within the same region, across regions is charged on both sides of the transfer.
+- Global tables – charged based on the resources associated with each replica of the table (replicated write capacity units, or rWCUs).
+- Reserved Capacity – option available for a one-time upfront fee and commitment to paying a minimum usage level at specific hourly rates for the duration of the term. Additional throughput is charged at standard rates.
 
-Provisioned throughput (write).
-Provisioned throughput (read).
-Indexed data storage.
-Data transfer – no charge for data transfer between DynamoDB and other AWS services within the same region, across regions is charged on both sides of the transfer.
-Global tables – charged based on the resources associated with each replica of the table (replicated write capacity units, or rWCUs).
-Reserved Capacity – option available for a one-time upfront fee and commitment to paying a minimum usage level at specific hourly rates for the duration of the term. Additional throughput is charged at standard rates.
 On-demand capacity mode:
+- Charged for reads and writes
+- No need to specify how much capacity is required
+- Good for unpredictable workloads
 
-Charged for reads and writes
-No need to specify how much capacity is required
-Good for unpredictable workloads
 Provisioned capacity mode:
+- Specify number of reads and writes per second
+- Can use Auto Scaling
+- Good for predictable workloads
+- Consistent traffic or gradual changes
 
-Specify number of reads and writes per second
-Can use Auto Scaling
-Good for predictable workloads
-Consistent traffic or gradual changes
-AWS Support Plans
+### AWS Support Plans
 There are four AWS support plans available:
-
-Basic – billing and account support only (access to forums only).
-Developer – business hours support via email.
-Business – 24×7 email, chat, and phone support.
-Enterprise – 24×7 email, chat, and phone support.
+- Basic – billing and account support only (access to forums only).
+- Developer – business hours support via email.
+- Business – 24×7 email, chat, and phone support.
+- Enterprise – 24×7 email, chat, and phone support.
 Enterprise support comes with a Technical Account Manager (TAM).
-
 Developer allows one person to open unlimited cases.
-
 Business and Enterprise allow unlimited contacts to open unlimited cases.
 
-### Pricing models for AWS
-- On-Demand
-- Spot
-- Reserved
-- Dedicated Host
-- Saving Plans
-- Per Second Billing
-### Cost allocation tags
-### Billing support
-- AWS Billing dashboard
-- AWS Cost and Usage report
-- AWS Cost Explorer
-- AWS Budgets / CloudWatch Billing alert
-- AWS Free support
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/176759d4-9e67-469f-bb58-1472c3d1df1c)
+![image](https://github.com/nnhung232/AWS-CCP/assets/4153181/99249a64-6cbc-418f-8b79-851197a25869)
+
+### Resource Groups and Tagging
+Tags are key / value pairs that can be attached to AWS resources.
+Tags contain metadata (data about data).
+Tags can sometimes be inherited – e.g. resources created by Auto Scaling, CloudFormation or Elastic Beanstalk.
+Resource groups make it easy to group resources using the tags that are assigned to them. You can group resources that share one or more tags.
+
+Resource groups contain general information, such as:
+- Region.
+- Name.
+- Health Checks.
+
+And specific information, such as:
+- Public & private IP addresses (for EC2).
+- Port configurations (for ELB).
+- Database engine (for RDS).
+
+### AWS Organizations and Consolidated Billing
+AWS organizations allows you to consolidate multiple AWS accounts into an organization that you create and centrally manage.
+
+Available in two feature sets:
+- Consolidated Billing.
+- All features.
+
+Includes root accounts and organizational units.
+Policies are applied to root accounts or OUs.
+
+Consolidated billing includes:
+- Paying Account – independent and cannot access resources of other accounts.
+- Linked Accounts – all linked accounts are independent.
+
+Consolidated billing has the following benefits:
+- One bill – You get one bill for multiple accounts.
+- Easy tracking – You can track the charges across multiple accounts and download the combined cost and usage data.
+- Combined usage – You can combine the usage across all accounts in the organization to share the volume pricing discounts and Reserved Instance discounts. This can result in a lower charge for your project, department, or company than with individual standalone accounts.
+- No extra fee – Consolidated billing is offered at no additional cost.
+
+Limit of 20 linked accounts (by default).
+One bill for multiple AWS accounts.
+Easy to track charges and allocate costs.
+Volume pricing discounts can be applied to resources.
+Billing alerts enabled on the Paying account include data for all Linked accounts (or can be created per Linked account).
+Consolidated billing allows you to get volume discounts on all your accounts.
+Unused reserved instances (RIs) for EC2 are applied across the group.
+CloudTrail is on a per account basis and per region basis but can be aggregated into a single bucket in the paying account.
+
+Best practices:
+- Always enable multi-factor authentication (MFA) on the root account.
+- Always use a strong and complex password on the root account.
+- The Paying account should be used for billing purposes only. Do not deploy resources into the Paying account.
+
+### AWS Quick Starts
+Quick Starts are built by AWS architects and partners to help you deploy popular solutions on AWS, based on AWS best practices for security and high availability.
+These reference deployments implement key technologies automatically on the AWS Cloud, often with a single click and in less than an hour.
+Leverages CloudFormation.
+
+AWS Cost Calculators and Tools
+- AWS Cost Explorer – enables you to visualize your usage patterns over time and to identify your underlying cost drivers.
+- AWS Pricing Calculator – create cost estimates to suit your AWS use cases.
+
+### AWS Cost Explorer
+The AWS Cost Explorer is a free tool that allows you to view charts of your costs.
+You can view cost data for the past 13 months and forecast how much you are likely to spend over the next three months.
+Cost Explorer can be used to discover patterns in how much you spend on AWS resources over time and to identify cost problem areas.
+Cost Explorer can help you to identify service usage statistics such as:
+- Which services you use the most.
+- View metrics for which AZ has the most traffic.
+- Which linked account is used the most.
+
+### AWS Pricing Calculator
+AWS Pricing Calculator is a web-based service that you can use to create cost estimates to suit your AWS use cases.
+AWS Pricing Calculator is useful both for people who have never used AWS and for those who want to reorganize or expand their usage.
+AWS Pricing Calculator allows you to explore AWS services based on your use cases and create a cost estimate.
+
+### AWS Cost & Usage Report
+Publish AWS billing reports to an Amazon S3 bucket.
+
+Reports break down costs by:
+- Hour, day, month, product, product resource, tags.
+
+Can update the report up to three times a day.
+Create, retrieve, and delete your reports using the AWS CUR API Reference.
+
+### AWS Price List API
+Query the prices of AWS services.
+Price List Service API (AKA the Query API) – query with JSON.
+AWS Price List API (AKA the Bulk API) – query with HTML.
+Alerts via Amazon SNS when prices change.
+
+### AWS Budgets
+Used to track cost, usage, or coverage and utilization for your Reserved Instances and Savings Plans, across multiple dimensions, such as service, or Cost Categories.
+Alerting through event-driven alert notifications for when actual or forecasted cost or usage exceeds your budget limit, or when your RI and Savings Plans’ coverage or utilization drops below your threshold.
+Create annual, quarterly, monthly, or even daily budgets depending on your business needs.
