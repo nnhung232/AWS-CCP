@@ -1575,7 +1575,8 @@ Also support Apache Spark, HBase, Presto and Flink.
 Most commonly used for log analysis, financial analysis, or extract, translate and loading (ETL) activities.
 
 ## AWS Application Integration Services
-| Service	| What it does	| Example use cases
+| Service	| What it does	| Example use cases |
+| - | - | - |
 | Simple Queue Service (SQS)	| Messaging queue; store and forward patterns	| Building distributed / decoupled applications |
 | Simple Notification Service (SNS)	| Set up, operate, and send notifications from the cloud	| Send email notification when CloudWatch alarm is triggered |
 | Step Functions	| Out-of-the-box coordination of AWS service components with visual workflow	| Order processing workflow
