@@ -22,7 +22,7 @@ https://rishabkumar7.github.io/CloudNotes/CPP.html
 ## Type of Cloud Deployment
 - Cloud: Fully deploy in cloud
 - On-Premise: tại chỗ. It sometimes called the private cloud
-- Hybrid: Là a way to connect infrastructure và application betwwen cloud-based resource và những resource ko ở trên cloud. *AWS Outpost* là service cho phép chạy AWS service trên on-premise infrastruture
+- Hybrid: Là a way to connect infrastructure và application betwwen cloud-based resource và những resource ko ở trên cloud. *AWS Outposts* là service cho phép chạy AWS service trên on-premise infrastruture
 
 ## Cloud Architecture Design Principles
 - Design for failure and making sure that our architure is fault tolerant. We do that by using architecture that spanning multiple avaiablitiy zones, multiple regions
