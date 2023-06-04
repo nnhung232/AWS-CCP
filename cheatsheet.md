@@ -1037,6 +1037,22 @@ Import/export is when you send your own disks into AWS – this is being depreca
 Snowball must be ordered from and returned to the same region.
 To speed up data transfer it is recommended to run simultaneous instances of the AWS Snowball Client in multiple terminals and transfer small files as batches.
 ### Amazon Elastic Block Store (EBS)
+Amazon Elastic Block Store (Amazon EBS) provides persistent block storage volumes for use with Amazon EC2 instances in the AWS Cloud.
+
+Each Amazon EBS volume is automatically replicated within its Availability Zone to protect you from component failure, offering high availability and durability.
+
+Amazon EBS volumes offer the consistent and low-latency performance needed to run your workloads. With Amazon EBS, you can scale your usage up or down within minutes – all while paying a low price for only what you provision.
+
+The following EBS volumes appear most often on the AWS exams:
+| Volume Type |	EBS Provisioned IOPS SSD (io1/io2) | EBS General Purpose SSD (gp2/gp3) | Throughput Optimized HDD (st1) | Cold HDD (sc1) |
+|Short Description |	Highest performance SSD volume designed for latency-sensitive transactional workloads |	General Purpose SSD volume that balances price performance for a wide variety of transactional workloads |	Low-cost HDD volume, designed for frequently accessed. Throughput intensive workloads |	Lowest cost HDD volume designed for less frequently accessed workloads |
+| Use Cases |	I/O-intensive NoSQL and relational databases |	Boot volumes, low-latency interactive apps, dev & test |	Big-data, data warehouses, log processing |	Colder data requiring fewer scans per day |
+| Volume Size |	4 GiB – 16 TiB |	1 GiB – 16 TiB |	125 GB – 16 TiB |	125 GB – 16 TiB |
+| Max IOPS** / Volume |	64,000 |	16,000 |	500 |	250 |
+| Max Throughput\*\*\*Volume |	1,000 MiB/s |	250 MiB/s (gp2) 1000 MiB/s (gp3) | 500 MiB/s |	250 MiB/s |
+| Can be boot volume? |	Yes |	Yes |	No |	No |
+| EBS Multi-attach |	Supported |	Not Supported |	Not Supported |	Not Supported |
+
 ### Instance Store Volumes
 ### Amazon Elastic File System (EFS)
 ### AWS Storage Gateway
